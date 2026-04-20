@@ -327,7 +327,7 @@
                 <fb:control>
                     <DateRangeSelection
                         id="DRS1"
-                        class="DRS1"
+                        class="DRS1 filterInput"
                         delimiter="-"
                         displayFormat="dd/MM/yyyy"
                         width="15rem"
@@ -343,7 +343,8 @@
                     <MultiComboBox
                         id="divisionMCB"
                         width="12rem"
-                        class="sapUiSizeCompact"
+                                               class="sapUiSizeCompact filterInput"
+
                         items="{
                         path: '/ZdivisionSchSet',
                         sorter: { path: 'Spart' }
@@ -367,7 +368,7 @@
                     <MultiComboBox
                         id="divisionGroupMCB"
                         width="12rem"
-                        class="sapUiSizeCompact"
+                        class="sapUiSizeCompact filterInput"
                         items="{
                         path: '/ZdivGroupSchSet',
                         sorter: { path: 'ZdivGrp' }
@@ -391,7 +392,7 @@
                     <MultiComboBox
                         id="distChannelMCB"
                         width="12rem"
-                        class="sapUiSizeCompact"
+                        class="sapUiSizeCompact filterInput"
                         items="{
                         path: '/ZdistchnlSet',
                         sorter: { path: 'Vtweg' }
@@ -424,6 +425,8 @@
                 id="productTableToolbar"
             >
                 <m:Title
+                                class="title"
+
                     id="title"
                     text="Customer Group Details"
                 />

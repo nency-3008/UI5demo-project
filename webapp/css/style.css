@@ -210,10 +210,34 @@ span.sapMBtnInner.sapMBtnEmphasized {
 .sapUiTableCell:focus::before {
   outline: 0px solid transparent !important;
 }
+html.sap-desktop
+  .sapMBtn:focus
+  > .sapMBtnEmphasized.sapMFocusable:not(.sapMBtnActive):not(
+    .sapMToggleBtnPressed
+  ):not(.sapMBadgeIndicator):before,
+html.sap-desktop
+  .sapMBtn:focus
+  > .sapMBtnCritical.sapMFocusable:not(.sapMBtnActive):not(
+    .sapMBadgeIndicator
+  ):before,
+html.sap-desktop
+  .sapMBtn:focus
+  > .sapMBtnNegative.sapMFocusable:not(.sapMBtnActive):not(
+    .sapMBadgeIndicator
+  ):before,
+html.sap-desktop
+  .sapMBtn:focus
+  > .sapMBtnSuccess.sapMFocusable:not(.sapMBtnActive):not(
+    .sapMBadgeIndicator
+  ):before {
+  border: 1px solid transparent !important;
+}
+button :focus {
+  outline: none !important;
+}
 @media (max-width: 600px) {
   .title {
     font-size: 16px !important;
     font-weight: bold;
-    color: red !important;
   }
 }
