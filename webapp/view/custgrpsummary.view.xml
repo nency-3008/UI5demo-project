@@ -1,0 +1,924 @@
+<!-- <mvc:View controllerName="com.vcerp.zcustgrpsummary.controller.custgrpsummary"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    </Page>
+</mvc:View> -->
+<!-- <mvc:View
+    controllerName="com.vcerp.zcustgrpsummary.controller.custgrpsummary"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:m="sap.m"
+    xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:svm="sap.ui.comp.smartvariants"
+    xmlns:core="sap.ui.core"
+    class="sapUiSizeCompact"
+    xmlns:layout="sap.ui.layout"
+>
+    <f:DynamicPage
+        id="dynamicPage"
+        showFooter="false"
+    >
+        
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:actions>
+                    <m:Button
+                        text="Go"
+                        type="Emphasized"
+                        press="onEdit"
+                    />
+                    <m:Button
+                        type="Transparent"
+                        text="Hide Filter Bar"
+                    />
+                    <m:Button
+                        type="Transparent"
+                        text="Restore"
+                    />
+                    <m:Button
+                        type="Transparent"
+                        text="Filters"
+                    />
+                </f:actions>
+            </f:DynamicPageTitle>
+        </f:title>
+
+        <f:header>
+            <f:DynamicPageHeader>
+                <f:content>
+                    <fb:FilterBar
+                        id="filterbar"
+                        
+                        useToolbar="true"
+                        search=".onSearch"
+                        filterChange=".onFilterChange"
+                        afterVariantLoad=".onAfterVariantLoad"
+                        showGoOnFB="false"
+                        showFilterConfiguration="true"
+                    >
+                        <fb:filterGroupItems>
+                            <fb:FilterGroupItem
+                                name="Name"
+                                label="Name"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiComboBox
+                                  
+                                        name="Name"
+                                        
+                                        selectionChange=".onSelectionChange"
+                                        items="{ path: '/ProductNames', templateShareable: true }"
+                                    >
+                                        <core:Item
+                                            key="{key}"
+                                            text="{name}"
+                                        />
+                                     
+                                    </MultiComboBox>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="Category"
+                                label="Category"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiComboBox
+                                
+                                        name="Category"
+                                        width="350px"
+                                        selectionChange=".onSelectionChange"
+                                        items="{ path: '/ProductCategories', templateShareable: true }"
+                                    >
+                                        <core:Item
+                                            key="{key}"
+                                            text="{name}"
+                                        />
+                                       
+                                    </MultiComboBox>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="SupplierName"
+                                label="SupplierName"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiComboBox
+                                    
+                                        name="SupplierName"
+                                        width="350px"
+                                        selectionChange=".onSelectionChange"
+                                        items="{ path: '/ProductSuppliers', templateShareable: true }"
+                                    >
+                                        <core:Item
+                                            key="{key}"
+                                            text="{name}"
+                                        />
+                                     
+                                    </MultiComboBox>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                        </fb:filterGroupItems>
+
+                        
+                    </fb:FilterBar>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+
+    
+    </f:DynamicPage>
+</mvc:View> -->
+<!-- <mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.ui.comp.smartfilterbar"
+    xmlns:f="sap.f"
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:st="sap.ui.comp.smarttable"
+    xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    controllerName="com.vcerp.zcustgrpsummary.controller.custgrpsummary"
+    height="100%">
+
+    <f:DynamicPage id="dynamicPage" fitContent="true">
+        <f:header>
+            <f:DynamicPageHeader>
+                <SmartFilterBar
+                    id="smartFilterBar"
+                    entitySet="MainEntitySet">
+
+                    <controlConfiguration>
+                        
+                        <ControlConfiguration
+                            key="Division"
+                            label="Division"
+                            visibleInAdvancedArea="true"
+                            index="1"
+                            width="250px">
+                            <customControl>
+                                <m:MultiComboBox
+                                    id="divisionMulti"
+                                    selectionChange="onDivisionChange"
+                                    width="250px"
+                                    customData:hasValue="true">
+                                    <core:Item key="1" text="Consumer"/>
+                                    <core:Item key="2" text="Retail"/>
+                                    <core:Item key="3" text="Corporate"/>
+                                </m:MultiComboBox>
+                            </customControl>
+                        </ControlConfiguration>
+
+                        <ControlConfiguration
+                            key="DivisionGroup"
+                            label="Division Group"
+                            visibleInAdvancedArea="true"
+                            index="2"
+                            width="250px">
+                            <customControl>
+                                <m:MultiComboBox
+                                    id="divisionGroupMulti"
+                                    selectionChange="onDivisionGroupChange"
+                                    width="250px"
+                                    customData:hasValue="true">
+                                    <core:Item key="A" text="Group A"/>
+                                    <core:Item key="B" text="Group B"/>
+                                    <core:Item key="C" text="Group C"/>
+                                </m:MultiComboBox>
+                            </customControl>
+                        </ControlConfiguration>
+
+                        
+                        <ControlConfiguration
+                            key="DistributionChannel"
+                            label="Distribution Channel"
+                            visibleInAdvancedArea="true"
+                            index="3"
+                            width="250px">
+                            <customControl>
+                                <m:MultiComboBox
+                                    id="distChannelMulti"
+                                    selectionChange="onDistChannelChange"
+                                    width="250px"
+                                    customData:hasValue="true">
+                                    <core:Item key="10" text="Online"/>
+                                    <core:Item key="20" text="Wholesale"/>
+                                    <core:Item key="30" text="Export"/>
+                                </m:MultiComboBox>
+                            </customControl>
+                        </ControlConfiguration>
+                    </controlConfiguration>
+                </SmartFilterBar>
+            </f:DynamicPageHeader>
+        </f:header>
+ </f:DynamicPage>
+</mvc:View> -->
+<!-- <mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+    controllerName="com.vcerp.zcustgrpsummary.controller.custgrpsummary"
+    height="100%">
+
+    <f:DynamicPage>
+        <f:header>
+            <f:DynamicPageHeader>
+                <f:content>
+                    <fb:FilterBar
+                        id="filterBar"
+                        persistencyKey=""
+                        useToolbar="true"
+                        showRestoreButton="true"
+                        search="onSearch"
+                        reset="onReset"
+                        restore="onRestore"
+                        filterChange="onFilterChange"
+                        
+                       >
+
+                        <fb:filterGroupItems>
+                           
+                            <fb:FilterGroupItem name="Division" label="Division" groupName="Main" visibleInFilterBar="true">
+                                <fb:control>
+                                    <MultiComboBox id="divisionMulti"  width="100%" >
+                                    
+                                        <core:Item key="1" text="Consumer"/>
+                                        <core:Item key="2" text="Retail"/>
+                                        <core:Item key="3" text="Corporate"/>
+                                    </MultiComboBox>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                           
+                            <fb:FilterGroupItem name="DivisionGroup" label="Division Group" groupName="Main" visibleInFilterBar="true">
+                                <fb:control>
+                                    <MultiComboBox id="divisionGroupMulti"  width="100%" >
+                                        <core:Item key="A" text="Group A"/>
+                                        <core:Item key="B" text="Group B"/>
+                                        <core:Item key="C" text="Group C"/>
+                                    </MultiComboBox>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                           
+                            <fb:FilterGroupItem name="DistChannel" label="Distribution Channel" groupName="Main" visibleInFilterBar="true">
+                                <fb:control>
+                                    <MultiComboBox id="distChannelMulti"  width="100%" >
+                                        <core:Item key="10" text="Online"/>
+                                        <core:Item key="20" text="Wholesale"/>
+                                        <core:Item key="30" text="Export"/>
+                                    </MultiComboBox>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            
+                            <fb:FilterGroupItem name="DateRange" label="Date Range" groupName="Main" visibleInFilterBar="true">
+                                <fb:control>
+                                    <DateRangeSelection id="dateRange" displayFormat="dd.MM.yyyy"/>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                        </fb:filterGroupItems>
+                    </fb:FilterBar>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+    </f:DynamicPage>
+</mvc:View> -->
+<!-- Working code for filter bar -->
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:m="sap.m"
+    xmlns:fb="sap.ui.comp.filterbar"
+    controllerName="com.vcerp.zcustgrpsummary.controller.custgrpsummary"
+    class="sapUiSizeCompact"
+    xmlns:core="sap.ui.core"
+    height="100%"
+    xmlns:table="sap.ui.table"
+>
+    <fb:FilterBar
+        id="myFilterBar"
+        showGoOnFB="true"
+        showRestoreButton="true"
+        showClearButton="true"
+        showFilterConfiguration="false"
+        advancedMode="false"
+        useToolbar="true"
+        smartVariant="false"
+        showFilterBarMessage="false"
+        search="onFilterSearch"
+    >
+        <fb:filterItems>
+            <fb:FilterItem
+                name="Date"
+                label="Date"
+            >
+                <fb:control>
+                    <DateRangeSelection
+                        id="DRS1"
+                        class="DRS1"
+                        delimiter="-"
+                        displayFormat="dd/MM/yyyy"
+                        width="15rem"
+                    />
+                </fb:control>
+            </fb:FilterItem>
+
+            <fb:FilterItem
+                name="Division"
+                label="Division"
+            >
+                <fb:control>
+                    <MultiComboBox
+                        id="divisionMCB"
+                        width="12rem"
+                        class="sapUiSizeCompact"
+                        items="{
+                        path: '/ZdivisionSchSet',
+                        sorter: { path: 'Spart' }
+                    }"
+                        selectionChange="handleSelectionChange"
+                        selectionFinish="handleSelectionFinish"
+                    >
+                        <core:Item
+                            key="{Spart}"
+                            text="{= ${Spart} + ' - ' + ${Vtxtk} }"
+                        />
+                    </MultiComboBox>
+                </fb:control>
+            </fb:FilterItem>
+
+            <fb:FilterItem
+                name="DivisionGroup"
+                label="Division Group"
+            >
+                <fb:control>
+                    <MultiComboBox
+                        id="divisionGroupMCB"
+                        width="12rem"
+                        class="sapUiSizeCompact"
+                        items="{
+                        path: '/ZdivGroupSchSet',
+                        sorter: { path: 'ZdivGrp' }
+                    }"
+                        selectionChange="handleSelectionChange"
+                        selectionFinish="handleSelectionFinish"
+                    >
+                        <core:Item
+                            key="{ZdivGrp}"
+                            text="{ZdivGrp}"
+                        />
+                    </MultiComboBox>
+                </fb:control>
+            </fb:FilterItem>
+
+            <fb:FilterItem
+                name="DistChannel"
+                label="Distribution Channel"
+            >
+                <fb:control>
+                    <MultiComboBox
+                        id="distChannelMCB"
+                        width="12rem"
+                        class="sapUiSizeCompact"
+                        items="{
+                        path: '/ZdistchnlSet',
+                        sorter: { path: 'Vtweg' }
+                    }"
+                        selectionChange="handleSelectionChange"
+                        selectionFinish="handleSelectionFinish"
+                    >
+                        <core:Item
+                            key="{Vtweg}"
+                            text="{= ${Vtweg} + ' - ' + ${Vtext} }"
+                        />
+                    </MultiComboBox>
+                </fb:control>
+            </fb:FilterItem>
+        </fb:filterItems>
+    </fb:FilterBar>
+
+    <!-- First Table Click on  Customer Group  -->
+
+    <table:Table
+        id="productTable"
+        rows="{CustGrpModel>/}"
+        selectionMode="MultiToggle"
+        visibleRowCount="5"
+        showColumnHeaders="true"
+    >
+        <table:extension>
+            <m:OverflowToolbar
+                style="Clear"
+                id="productTableToolbar"
+            >
+                <m:Title
+                    id="title"
+                    text="Customer Group Details"
+                />
+                <Text
+                    id="rowCount"
+                    text="({= ${CustGrpModel>/}.length })"
+                    class="sapUiSmallMarginBegin"
+                />
+                <ToolbarSpacer />
+                <!-- <m:SegmentedButton
+                    selectedKey="LACS"
+                    id="unitSwitch"
+                    selectionChange="onUnitChange"
+                > -->
+
+                <m:SegmentedButton
+                    selectedKey="{unitModel>/selectedUnit}"
+                    id="unitSwitch"
+                    selectionChange="onUnitChange"
+                >
+                    <items>
+                        <SegmentedButtonItem
+                            key="LACS"
+                            text="Lacs"
+                        />
+                        <SegmentedButtonItem
+                            key="CRORES"
+                            text="Crores"
+                        />
+                    </items>
+                </m:SegmentedButton>
+                <m:Button
+                    icon="sap-icon://excel-attachment"
+                    press="onExportExcel1"
+                />
+                <m:Button
+                    press="onCopyPress"
+                    icon="sap-icon://copy"
+                />
+            </m:OverflowToolbar>
+        </table:extension>
+        <table:columns>
+            <table:Column
+                label="Customer Group"
+                sortProperty="KdgrpAuft"
+            >
+                <table:template>
+                    <!-- <m:Text text="{CustGrpModel>KdgrpAuft}" /> -->
+                    <Link
+                        text="{CustGrpModel>KdgrpAuft}"
+                        press="onCustGroupPress"
+                    />
+                </table:template>
+            </table:Column>
+            <table:Column
+                label="Customer Group Name"
+                sortProperty="Custgrpdesc"
+            >
+                <table:template>
+                    <m:Text text="{CustGrpModel>Custgrpdesc}" />
+                </table:template>
+            </table:Column>
+            <table:Column
+                label="Sales"
+                hAlign="End"
+                sortProperty="Netwr"
+            >
+                <table:template>
+                    <!-- <m:Text text="{CustGrpModel>Netwr}" /> -->
+                 <m:Text text="{
+                     parts:[{path:'CustGrpModel>Netwr'},{path:'unitModel>/selectedUnit'}],
+                        formatter: '.formatter.toLacsCrores'
+                }"/>
+                </table:template>
+            </table:Column>
+            <table:Column
+                label="All claims"
+                hAlign="End"
+                sortProperty="Allclaim"
+            >
+                <table:template>
+                    <!-- <m:Text text="{CustGrpModel>Allclaim}" /> -->
+                    <m:Text text="{
+                     parts:[{path:'CustGrpModel>Allclaim'},{path:'unitModel>/selectedUnit'}],
+                        formatter: '.formatter.toLacsCrores'
+                }"/>
+                   
+                </table:template>
+            </table:Column>
+            <table:Column
+                label="Net of all claims amt"
+                sortProperty="Netallclaim"
+            >
+                <table:template>
+                    <!-- <m:Text text="{CustGrpModel>Netallclaim}" /> -->
+                   <m:Text text="{
+                     parts:[{path:'CustGrpModel>Netallclaim'},{path:'unitModel>/selectedUnit'}],
+                        formatter: '.formatter.toLacsCrores'
+                }"/>
+                </table:template>
+            </table:Column>
+            <table:Column
+                label="Last month sales"
+                sortProperty="LastMonSales"
+            >
+                <table:template>
+                    <!-- <m:Text text="{CustGrpModel>LastMonSales}" /> -->
+                       <m:Text text="{
+                     parts:[{path:'CustGrpModel>LastMonSales'},{path:'unitModel>/selectedUnit'}],
+                        formatter: '.formatter.toLacsCrores'
+                }"/>
+                    
+                </table:template>
+            </table:Column>
+        </table:columns>
+    </table:Table>
+
+    <!-- Completed First Table -->
+
+    <!-- Second Table Click on Sales Office -->
+
+    <table:Table
+        id="salesOfficeTable"
+        rows="{CustSaleModel>/results}"
+        visible="false"
+        visibleRowCount="5"
+        showColumnHeaders="true"
+    >
+        <table:extension>
+            <m:OverflowToolbar
+                style="Clear"
+                id="salesOfficeTableToolbar"
+            >
+                <m:Title text="Sales Office Details" />
+                <Text
+                    id="rowCount2"
+                    text="({= ${CustSaleModel>/results}.length })"
+                    class="sapUiSmallMarginBegin"
+                />
+                <ToolbarSpacer />
+                <!-- <Breadcrumbs 
+                        id="breadcrumbs"
+                        class="sapUiSmallMarginEnd"
+                    > -->
+                <m:Link
+                    id="custGroupLink"
+                    press="onBackPress"
+                />
+                <!-- </Breadcrumbs> -->
+
+                <SegmentedButton
+                     selectedKey="{unitModel>/selectedUnit}"
+                    id="Currency"
+                    selectionChange="onUnitChange"
+                    enabled="false"
+                >
+                    <items>
+                        <SegmentedButtonItem
+                            key="LACS"
+                            text="Lacs"
+                        />
+                        <SegmentedButtonItem
+                            key="CRORES"
+                            text="Crores"
+                        />
+                    </items>
+                </SegmentedButton>
+                <Button
+                    icon="sap-icon://excel-attachment"
+                    press="onExportExcel2"
+                />
+
+                <m:Button
+                    press="onCopyPress2"
+                    icon="sap-icon://copy"
+                />
+            </m:OverflowToolbar>
+        </table:extension>
+        <table:columns>
+            <table:Column
+                label="Sales Office"
+                sortProperty="Vkbur"
+            >
+                <!-- <table:template>
+                    <m:Text text="{CustSaleModel>Vkbur}" />
+                </table:template> -->
+                <table:template>
+                    <!-- <m:Text text="{CustGrpModel>KdgrpAuft}" /> -->
+                    <Link
+                        text="{CustSaleModel>Vkbur}"
+                        press="onSalesOfficePress"
+                    />
+                </table:template>
+            </table:Column>
+            <table:Column
+                label="Description"
+                sortProperty="Soffdesc"
+            >
+                <table:template>
+                    <m:Text text="{CustSaleModel>Soffdesc}" />
+                </table:template>
+            </table:Column>
+            <table:Column
+                label="Sales"
+                hAlign="End"
+                sortProperty="Netwr"
+            >
+                <table:template>
+                    <!-- <m:Text text="{CustSaleModel>Netwr}" /> -->
+                    <m:Text text="{
+                     parts:[{path:'CustSaleModel>Netwr'},{path:'unitModel>/selectedUnit'}],
+                        formatter: '.formatter.toLacsCrores'
+                }"/>
+                </table:template>
+            </table:Column>
+            <table:Column
+                label="All claims"
+                hAlign="End"
+                sortProperty="Allclaim"
+            >
+                <table:template>
+                    <!-- <m:Text text="{CustSaleModel>Allclaim}" /> -->
+                      <m:Text text="{
+                     parts:[{path:'CustSaleModel>Allclaim'},{path:'unitModel>/selectedUnit'}],
+                        formatter: '.formatter.toLacsCrores'
+                }"/>
+                </table:template>
+            </table:Column>
+            <table:Column label="Net of all claims amt">
+                <table:template>
+                    <!-- <m:Text text="{CustSaleModel>Netallclaim}" /> -->
+                      <m:Text text="{
+                     parts:[{path:'CustSaleModel>Netallclaim'},{path:'unitModel>/selectedUnit'}],
+                        formatter: '.formatter.toLacsCrores'
+                }"/>
+                </table:template>
+            </table:Column>
+            <table:Column
+                label="Last month sales"
+                sortProperty="LastMonSales"
+            >
+                <table:template>
+                    <!-- <m:Text text="{CustSaleModel>LastMonSales}" /> -->
+                      <m:Text text="{
+                     parts:[{path:'CustSaleModel>LastMonSales'},{path:'unitModel>/selectedUnit'}],
+                        formatter: '.formatter.toLacsCrores'
+                }"/>
+                </table:template>
+            </table:Column>
+        </table:columns>
+    </table:Table>
+
+    <!-- Third Table click on Sales Group -->
+
+    <table:Table
+        id="salesGroupTable"
+        rows="{CustSalesGrpModel>/results}"
+        visible="false"
+        visibleRowCount="6"
+    >
+        <table:extension>
+            <m:OverflowToolbar
+                style="Clear"
+                id="salesGroupTableToolbar"
+            >
+                <m:Title text="Sales Group Details" />
+                <Text
+                    id="rowCount3"
+                    text="({= ${CustSalesGrpModel>/results}.length })"
+                    class="sapUiSmallMarginBegin"
+                />
+                <ToolbarSpacer />
+                <!-- <Breadcrumbs 
+                        id="breadcrumbs"
+                        class="sapUiSmallMarginEnd"
+                    > -->
+                <m:Link
+                    press="onBackPress2"
+                    id="SalesOffice"
+                />
+                <!-- </Breadcrumbs> -->
+
+                <SegmentedButton
+                   selectedKey="{unitModel>/selectedUnit}"
+                    id="Currency2"
+                    selectionChange="onUnitChange"
+                    enabled="false"
+                >
+                    <items>
+                        <SegmentedButtonItem
+                            key="LACS"
+                            text="Lacs"
+                        />
+                        <SegmentedButtonItem
+                            key="CRORES"
+                            text="Crores"
+                        />
+                    </items>
+                </SegmentedButton>
+                <Button
+                    icon="sap-icon://excel-attachment"
+                    press="onExportExcel3"
+                />
+
+                <m:Button
+                    press="onCopyPress3"
+                    icon="sap-icon://copy"
+                />
+            </m:OverflowToolbar>
+        </table:extension>
+
+        <table:columns>
+            <table:Column label="Sales Group">
+                <table:template>
+                    <!-- <Text text="{CustSalesGrpModel>Vkgrp}" /> -->
+
+                    <Link
+                        text="{CustSalesGrpModel>Vkgrp}"
+                        press="onSaleGroupPress"
+                    />
+                </table:template>
+            </table:Column>
+            <table:Column label="Sales Group name">
+                <table:template>
+                    <Text text="{CustSalesGrpModel>Sgrpdesc}" />
+                </table:template>
+            </table:Column>
+            <table:Column
+                label="Sales"
+                hAlign="End"
+            >
+                <table:template>
+                    <!-- <Text text="{CustSalesGrpModel>Netwr}" /> -->
+
+                  <m:Text text="{
+                     parts:[{path:'CustSalesGrpModel>Netwr'},{path:'unitModel>/selectedUnit'}],
+                        formatter: '.formatter.toLacsCrores'
+                }"/>
+                </table:template>
+            </table:Column>
+            <table:Column
+                label="All claims"
+                hAlign="End"
+            >
+                <table:template>
+                    <!-- <Text text="{CustSalesGrpModel>Allclaim}" /> -->
+                    <m:Text text="{
+                     parts:[{path:'CustSalesGrpModel>Allclaim'},{path:'unitModel>/selectedUnit'}],
+                        formatter: '.formatter.toLacsCrores'
+                }"/>
+                </table:template>
+            </table:Column>
+            <table:Column
+                label="Net of all claims amt"
+                hAlign="End"
+            >
+                <table:template>
+                    <!-- <Text text="{CustSalesGrpModel>Netallclaim}" /> -->
+                    <m:Text text="{
+                     parts:[{path:'CustSalesGrpModel>Netallclaim'},{path:'unitModel>/selectedUnit'}],
+                        formatter: '.formatter.toLacsCrores'
+                }"/>
+                </table:template>
+            </table:Column>
+            <table:Column
+                label="Last month sales"
+                hAlign="End"
+            >
+                <table:template>
+                    <!-- <Text text="{CustSalesGrpModel>LastMonSales}" /> -->
+                    <m:Text text="{
+                     parts:[{path:'CustSalesGrpModel>LastMonSales'},{path:'unitModel>/selectedUnit'}],
+                        formatter: '.formatter.toLacsCrores'
+                }"/>
+                </table:template>
+            </table:Column>
+        </table:columns>
+    </table:Table>
+
+    <table:Table
+        id="customerDetails"
+        rows="{CustModel>/results}"
+        visible="false"
+        visibleRowCount="6"
+    >
+        <table:extension>
+            <m:OverflowToolbar
+                style="Clear"
+                id="customerDetailsToolbar"
+            >
+                <m:Title text="Sales Office Details" />
+                <Text
+                    id="rowCount4"
+                    text="({= ${CustModel>/results}.length })"
+                    class="sapUiSmallMarginBegin"
+                />
+                <ToolbarSpacer />
+                <!-- <Breadcrumbs 
+                        id="breadcrumbs"
+                        class="sapUiSmallMarginEnd"
+                    > -->
+                <m:Link
+                    press="onBackPress4"
+                    id="SalesGroup"
+                />
+                <!-- </Breadcrumbs> -->
+
+                <SegmentedButton
+                     selectedKey="{unitModel>/selectedUnit}"
+                    id="Currency3"
+                    selectionChange="onUnitChange"
+                    enabled="false"
+                >
+                    <items>
+                        <SegmentedButtonItem
+                            key="LACS"
+                            text="Lacs"
+                        />
+                        <SegmentedButtonItem
+                            key="CRORES"
+                            text="Crores"
+                        />
+                    </items>
+                </SegmentedButton>
+                <Button
+                    icon="sap-icon://excel-attachment"
+                    press="onExportExcel4"
+                />
+
+                <m:Button
+                    press="onCopyPress4"
+                    icon="sap-icon://copy"
+                />
+            </m:OverflowToolbar>
+        </table:extension>
+
+        <table:columns>
+            <table:Column label="Customer Code">
+                <table:template>
+                    <Text text="{CustModel>Kunag}" />
+                </table:template>
+            </table:Column>
+            <table:Column label="Customer code Name">
+                <table:template>
+                    <Text text="{CustModel>Name1}" />
+                </table:template>
+            </table:Column>
+            <table:Column
+                label="Sales"
+                hAlign="End"
+            >
+                <table:template>
+                    <!-- <Text text="{CustModel>Netwr}" /> -->
+                       <m:Text text="{
+                     parts:[{path:'CustModel>Netwr'},{path:'unitModel>/selectedUnit'}],
+                        formatter: '.formatter.toLacsCrores'
+                }"/>
+                </table:template>
+            </table:Column>
+            <table:Column
+                label="All claims"
+                hAlign="End"
+            >
+                <table:template>
+                    <!-- <Text text="{CustModel>Allclaim}" /> -->
+                       <m:Text text="{
+                     parts:[{path:'CustModel>Allclaim'},{path:'unitModel>/selectedUnit'}],
+                        formatter: '.formatter.toLacsCrores'
+                }"/>
+                </table:template>
+            </table:Column>
+            <table:Column
+                label="Net of all claims amt"
+                hAlign="End"
+            >
+                <table:template>
+                    <!-- <Text text="{CustModel>Netallclaim}" /> -->
+                       <m:Text text="{
+                     parts:[{path:'CustModel>Netallclaim'},{path:'unitModel>/selectedUnit'}],
+                        formatter: '.formatter.toLacsCrores'
+                }"/>
+                </table:template>
+            </table:Column>
+            <table:Column
+                label="Last month sales"
+                hAlign="End"
+            >
+                <table:template>
+                    <!-- <Text text="{CustModel>LastMonSales}" /> -->
+                       <m:Text text="{
+                     parts:[{path:'CustModel>LastMonSales'},{path:'unitModel>/selectedUnit'}],
+                        formatter: '.formatter.toLacsCrores'
+                }"/>
+                </table:template>
+            </table:Column>
+        </table:columns>
+    </table:Table>
+</mvc:View>
