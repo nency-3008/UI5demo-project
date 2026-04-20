@@ -1,1 +1,219 @@
 /* Enter your custom styles here */
+
+/* ===== Filter Controls - Rounded Pill Style ===== */
+.filterInput .sapMInputBase,
+.filterInput.sapMInputBase,
+.filterInput .sapMMultiComboBox,
+.filterInput.sapMMultiComboBox,
+.filterInput .sapMDRS,
+.filterInput.sapMDRS {
+  border-radius: 20px !important;
+  height: 35px !important;
+  min-height: 35px !important;
+  border: 1px solid #c0c0c0 !important;
+}
+html.sap-desktop .sapMTokenizer:focus {
+  box-shadow: none !important;
+}
+
+.sapMInputBaseContentWrapper:not(.sapMInputBaseReadonlyWrapper):not(
+    .sapMInputBaseContentWrapperState
+  ) {
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+.sapMSegB .sapMSegBBtn .sapMSegBBtnInner {
+  padding-block: 5px !important;
+}
+.sapMIBar .sapMBtn .sapMBtnInner.sapMBtnDefault,
+.sapMIBar .sapMBtn .sapMBtnInner.sapMBtnDefault .sapUiIcon,
+.sapUxAPObjectPageHeaderIdentifierActions .sapMBtn .sapMBtnInner.sapMBtnDefault,
+.sapUxAPObjectPageHeaderIdentifierActions
+  .sapMBtn
+  .sapMBtnInner.sapMBtnDefault
+  .sapUiIcon {
+  color: #0b0b0b !important;
+  margin-top: 3px !important;
+}
+.sapMSegBBtn.sapMSegBBtnSel .sapMSegBBtnInner {
+  background: #0064d9 !important;
+  color: white !important;
+}
+.sapMInputBaseContentWrapper {
+  background: white !important;
+}
+.filterInput .sapMInputBaseInner,
+.filterInput input {
+  border-radius: 20px !important;
+  height: 38px !important;
+  line-height: 38px !important;
+}
+.filterInput .sapMMultiComboBoxBorder {
+  border-radius: 20px !important;
+  height: 40px !important;
+}
+.filterInput .sapMInputBaseContentWrapper {
+  border-radius: 20px !important;
+  height: 40px !important;
+}
+
+/* ===== Table Design ===== */
+
+/* Header row - gray background including checkbox column */
+.sapUiGlobalBackgroundColor,
+.sapMShellGlobalInnerBackground {
+  background-color: white !important;
+}
+.sapUiCompFilterBar {
+  border-bottom: none !important;
+}
+
+.sapUiTableCnt {
+  margin-top: 24px !important;
+}
+.sapUiTableColHdrTr,
+.sapUiTableColHdrTr td,
+.sapUiTableColRowHdr,
+.sapUiTableColRowHdrIco {
+  background-color: #f5f5f5 !important;
+}
+.sapUiTableColHdrCnt {
+  border-bottom: 1px solid transparent !important;
+}
+.sapUiSizeCozy .sapUiTableColHdrCnt {
+  border-bottom-color: transparent !important;
+  border-bottom: 1px solid transparent !important;
+}
+.sapUiTableCCnt {
+  border-bottom: none !important;
+}
+.sapMInputBaseIconContainer {
+  margin-top: 5px !important;
+}
+.sapUiTableColHdrTr .sapUiTableCell {
+  background-color: #f5f5f5 !important;
+  color: #555555 !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  border-bottom: 0px solid #e0e0e0 !important;
+}
+
+/* Checkbox column header cell - gray */
+.sapUiTableRowSelectionHeaderCell {
+  background-color: #f5f5f5 !important;
+  border-bottom: 0px solid #e0e0e0 !important;
+}
+
+/* Row - only bottom border */
+.sapUiTableTr > td {
+  border-bottom: 1px solid #e5e5e5 !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  padding-block: 10px !important;
+}
+.sapUiTableSelectAllCheckBox::after {
+  top: 7px !important;
+}
+
+/* Remove outer table border */
+.sapUiTable {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Row hover highlight - full row including checkbox cell */
+.sapUiTableTr:hover > td,
+.sapUiTableTr:hover .sapUiTableRowSelectionCell,
+.sapUiTableTr:hover .sapUiTableCellFirst,
+.sapUiTableRow:hover .sapUiTableCell,
+.sapUiTableRow:hover .sapUiTableRowSelectionCell {
+  background-color: #f9f9f9 !important;
+  cursor: pointer;
+}
+
+/* Selected row highlight */
+.sapUiTableRowSel > td {
+  background-color: #eaf2ff !important;
+}
+
+/* Cell padding */
+.sapUiTableCell {
+  padding: 12px 12px !important;
+  border-right: transparent !important;
+}
+
+/* Smaller checkbox */
+.sapUiTableRowSelectionCell .sapMCb,
+.sapUiTableRowSelectionHeaderCell .sapMCb {
+  zoom: 0.78 !important;
+}
+
+/* Checkbox column bottom border matches rows */
+.sapUiTableRowSelectionCell {
+  border-bottom: 1px solid #e8e8e8 !important;
+  border-right: none !important;
+  background-color: transparent !important;
+}
+
+/* Remove row focus outline */
+.sapUiTableTr:focus > td {
+  outline: none !important;
+}
+
+.title {
+  font-size: 20px !important;
+  font-weight: bold;
+}
+.sapUiSizeCompact .sapMTB {
+  height: auto !important;
+}
+.sapUiSizeCompact .sapMBtn {
+  height: auto !important;
+}
+.sapUiSizeCompact .sapMSegBBtn .sapMSegBBtnInner {
+  height: auto !important;
+}
+.sapMTB {
+  overflow: visible !important;
+}
+.sapUiCompFilterBar.sapUiRespGrid.sapUiRespGridVSpace1 > div {
+  margin-bottom: auto !important;
+}
+.sapMBtn:hover > .sapMBtnHoverable {
+  background-color: transparent !important;
+  border: 1px solid #0064d9 !important;
+  height: 40px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sapMBtn:hover
+  > .sapMBtnHoverable.sapMBtnEmphasized:not(.sapMBtnActive):not(
+    .sapMToggleBtnPressed
+  ) {
+  color: #0064d9 !important;
+}
+span.sapMBtnInner.sapMBtnEmphasized {
+  background-color: #0064d9 !important;
+  font-size: 14px !important;
+  width: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 90px !important;
+}
+.sapUiTableRowSel > .sapUiTableCell {
+  border-bottom-color: transparent !important;
+}
+.sapUiTableCell:focus::before {
+  outline: 0px solid transparent !important;
+}
+@media (max-width: 600px) {
+  .title {
+    font-size: 16px !important;
+    font-weight: bold;
+    color: red !important;
+  }
+}
