@@ -44,6 +44,10 @@ html.sap-desktop
   > .sapMFocusable:not(.sapMBadgeIndicator):before {
   border: 1px solid transparent !important;
 }
+.sapUiTableHeaderDataCell .sapMLabel,
+.sapMListTbl .sapMColumnHeader .sapMLabel {
+  font-weight: 600 !important;
+}
 .sapMInputBase:not(.sapMInputBaseDisabled).sapMInputBaseIconPressed
   .sapMInputBaseIconContainer
   .sapMInputBaseIcon,

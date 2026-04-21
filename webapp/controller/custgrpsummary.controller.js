@@ -592,8 +592,23 @@ sap.ui.define([
             onBackPress4: function () {
                 this.byId("customerDetails").setVisible(false);
                 this.byId("salesGroupTable").setVisible(true);
+            },
 
+            onEyePress1: function (oEvent) {
+                var oSource = oEvent.getSource();
+                var oContext = oSource.getBindingContext("CustGrpModel") || oSource.getBindingContext("CustModel");
+                var oData = oContext.getObject();
+                this.byId("dlgKdgrpAuft").setValue(oData.KdgrpAuft || "");
+                this.byId("dlgCustgrpdesc").setValue(oData.Custgrpdesc || "");
+                this.byId("dlgNetwr").setValue(String(oData.Netwr || ""));
+                this.byId("dlgAllclaim").setValue(String(oData.Allclaim || ""));
+                this.byId("dlgNetallclaim").setValue(String(oData.Netallclaim || ""));
+                this.byId("dlgLastMonSales").setValue(String(oData.LastMonSales || ""));
+                this.byId("customerDetailDialog").open();
+            },
 
+            onCloseDialog: function () {
+                this.byId("customerDetailDialog").close();
             },
 
 

@@ -544,6 +544,11 @@
                     
                 </table:template>
             </table:Column>
+            <table:Column label="Action" hAlign="Center" width="7rem">
+                <table:template>
+                    <m:Button icon="sap-icon://show" type="Transparent" press="onEyePress1" />
+                </table:template>
+            </table:Column>
         </table:columns>
     </table:Table>
 
@@ -932,4 +937,21 @@
             </table:Column>
         </table:columns>
     </table:Table>
+
+    <!-- Customer Details Popup Dialog -->
+    <m:Dialog id="customerDetailDialog" title="Customer Details" contentWidth="400px">
+        <m:content>
+            <m:List showSeparators="Inner">
+                <m:DisplayListItem label="KdgrpAuft" id="dlgKdgrpAuft" />
+                <m:DisplayListItem label="Custgrpdesc" id="dlgCustgrpdesc" />
+                <m:DisplayListItem label="Netwr" id="dlgNetwr" />
+                <m:DisplayListItem label="Allclaim" id="dlgAllclaim" />
+                <m:DisplayListItem label="Netallclaim" id="dlgNetallclaim" />
+                <m:DisplayListItem label="LastMonSales" id="dlgLastMonSales" />
+            </m:List>
+        </m:content>
+        <m:buttons>
+            <m:Button text="Close" type="Negative" press="onCloseDialog" />
+        </m:buttons>
+    </m:Dialog>
 </mvc:View>
