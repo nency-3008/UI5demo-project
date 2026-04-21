@@ -239,12 +239,12 @@ span.sapMBtnInner.sapMBtnEmphasized {
 
 .sapMTitleStyleAuto {
   font-size: 18px !important;
+  font-weight: 600;
 }
 .sapUiTableCellInner svg {
   stroke: #664daa !important;
 }
 .filterHeader {
-  font-weight: 600;
   position: absolute !important;
   top: 44px;
   left: 33px;
