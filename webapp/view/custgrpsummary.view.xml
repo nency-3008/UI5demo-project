@@ -307,6 +307,9 @@
     height="100%"
     xmlns:table="sap.ui.table"
 >
+ <HBox justifyContent="SpaceBetween" alignItems="Center" class="filterHeader">
+        <Title text="Filters" level="H5" />
+    </HBox>
     <fb:FilterBar
         id="myFilterBar"
         showGoOnFB="true"
@@ -920,6 +923,11 @@
                      parts:[{path:'CustModel>LastMonSales'},{path:'unitModel>/selectedUnit'}],
                         formatter: '.formatter.toLacsCrores'
                 }"/>
+                </table:template>
+            </table:Column>
+              <table:Column label="Action" hAlign="Center" width="7rem">
+                <table:template>
+                    <m:Button icon="sap-icon://show" type="Transparent" press="onEyePress1" />
                 </table:template>
             </table:Column>
         </table:columns>

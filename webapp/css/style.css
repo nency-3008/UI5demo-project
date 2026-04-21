@@ -1,19 +1,106 @@
 /* Enter your custom styles here */
 
-/* ===== Filter Controls - Rounded Pill Style ===== */
+/* ===== Page Background ===== */
+.sapUiGlobalBackgroundColor,
+.sapMShellGlobalInnerBackground,
+body,
+.sapUiBody {
+  background-color: white !important;
+}
+.sapMInputBase:not(.sapMInputBaseDisabled).sapMInputBaseIconPressed
+  .sapMInputBaseIcon,
+.sapMInputBase:not(.sapMInputBaseDisabled) .sapMInputBaseIcon:active,
+.sapMInputBase:not(.sapMInputBaseDisabled) .sapMInputBaseIcon:hover {
+  box-shadow: none !important;
+}
+html.sap-desktop
+  .sapMBtn:focus
+  > .sapMFocusable:not(.sapMBadgeIndicator):before {
+  border: 1px solid transparent !important;
+}
+.sapMInputBase:not(.sapMInputBaseDisabled).sapMInputBaseIconPressed
+  .sapMInputBaseIconContainer
+  .sapMInputBaseIcon,
+.sapMInputBase:not(.sapMInputBaseDisabled)
+  .sapMInputBaseIconContainer
+  .sapMInputBaseIcon:active {
+  background: transparent !important;
+}
+/* ===== Filter Bar Card ===== */
+.sapUiCompFilterBar,
+.sapUiCompFilterBar.sapUiRespGrid {
+  background: linear-gradient(135deg, #f8fbff 0%, #eef5fc 50%, #ffffff 100%);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 4px 8px rgba(0, 0, 0, 0.03);
+  border-radius: 12px !important;
+  border: 1px solid rgba(0, 106, 182, 0.1) !important;
+  padding: 16px 16px !important;
+  margin: 16px 16px 0 16px !important;
+}
+
+/* ===== Custom Filter Panel ===== */
+.customFilterPanel {
+  background: linear-gradient(135deg, #f8fbff 0%, #eef5fc 50%, #ffffff 100%);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 4px 8px rgba(0, 0, 0, 0.03);
+  border-radius: 12px !important;
+  border: 1px solid rgba(0, 106, 182, 0.1) !important;
+  padding: 16px 20px !important;
+  margin: 16px 16px 0 16px !important;
+}
+
+.filterTopBar {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.filterPanelTitle .sapMTitle {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #1d2d3e !important;
+}
+
+.filterInputsRow {
+  gap: 16px;
+}
+
+.filterField {
+  margin-right: 16px;
+}
+
+.filterField .sapMLabel {
+  font-size: 12px !important;
+  margin-bottom: 4px !important;
+}
+
+.sapMTB.sapMTBStandard.sapUiCompFilterBarToolbar {
+  background-color: transparent !important;
+}
 .filterInput .sapMInputBase,
 .filterInput.sapMInputBase,
 .filterInput .sapMMultiComboBox,
 .filterInput.sapMMultiComboBox,
 .filterInput .sapMDRS,
 .filterInput.sapMDRS {
-  border-radius: 20px !important;
+  border-radius: 8px !important;
   height: 35px !important;
   min-height: 35px !important;
-  border: 1px solid #c0c0c0 !important;
+  border: 1px solid rgba(0, 106, 182, 0.3) !important;
+}
+.sapMLabel {
+  color: #1d2d3e !important;
+}
+.sapUiSizeCompact .sapMSegB {
+  height: auto !important;
 }
 html.sap-desktop .sapMTokenizer:focus {
   box-shadow: none !important;
+}
+
+.sapMInputBaseContentWrapper::before {
+  display: none !important;
 }
 
 .sapMInputBaseContentWrapper:not(.sapMInputBaseReadonlyWrapper):not(
@@ -22,8 +109,97 @@ html.sap-desktop .sapMTokenizer:focus {
   box-shadow: none !important;
   background-color: transparent !important;
 }
+
+.sapMInputBaseContentWrapper {
+  background: white !important;
+}
+
+.filterInput .sapMInputBaseInner,
+.filterInput input {
+  border-radius: 20px !important;
+  height: 38px !important;
+  line-height: 38px !important;
+}
+
+.filterInput .sapMMultiComboBoxBorder {
+  border-radius: 20px !important;
+  height: 40px !important;
+}
+
+.filterInput .sapMInputBaseContentWrapper {
+  border-radius: 20px !important;
+  height: 40px !important;
+}
+
+.sapMInputBaseIconContainer {
+  margin-top: 5px !important;
+}
+
+/* ===== Go Button - Blue Pill ===== */
+span.sapMBtnInner.sapMBtnEmphasized {
+  background: linear-gradient(
+    90deg,
+    #0180a3 0%,
+    #0074b0 25%,
+    #3264b4 50%,
+    #664daa 75%,
+    #8e278f 100%
+  );
+  font-size: 14px !important;
+  width: 90px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 8px !important;
+  border: none !important;
+}
+
+.sapMBtn:hover
+  > .sapMBtnHoverable.sapMBtnEmphasized:not(.sapMBtnActive):not(
+    .sapMToggleBtnPressed
+  ) {
+  color: #fff !important;
+}
+
+/* ===== Hide Filters / Filters Ghost Buttons ===== */
+.sapUiCompFilterBar .sapMBtn .sapMBtnInner.sapMBtnDefault,
+.sapUiCompFilterBar .sapMBtn .sapMBtnInner.sapMBtnTransparent {
+  border: 1px solid #d0d0d0 !important;
+  border-radius: 8px !important;
+  background: #fff !important;
+  height: 36px !important;
+  padding: 0 12px !important;
+  color: #333 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* ===== SegmentedButton ===== */
 .sapMSegB .sapMSegBBtn .sapMSegBBtnInner {
   padding-block: 5px !important;
+}
+
+.sapMSegBBtn.sapMSegBBtnSel .sapMSegBBtnInner {
+  background: #664daa !important;
+  color: white !important;
+}
+.sapMSegB .sapMSegBBtn .sapMSegBBtnInner {
+  color: #664daa;
+}
+.sapMSegBBtn.sapMSegBBtnSel .sapMSegBBtnInner {
+  border-color: transparent !important;
+}
+.sapUiSizeCompact .sapMSegBBtn .sapMSegBBtnInner {
+  height: auto !important;
+}
+:not(.sapMBtnDisabled) .sapMBtnBack > .sapMBtnIcon,
+:not(.sapMBtnDisabled) .sapMBtnTransparent > .sapMBtnIcon {
+  color: #664daa !important;
+  font-size: 16px !important;
+}
+.sapMDLIValue {
+  color: #664daa !important;
 }
 .sapMIBar .sapMBtn .sapMBtnInner.sapMBtnDefault,
 .sapMIBar .sapMBtn .sapMBtnInner.sapMBtnDefault .sapUiIcon,
@@ -32,184 +208,205 @@ html.sap-desktop .sapMTokenizer:focus {
   .sapMBtn
   .sapMBtnInner.sapMBtnDefault
   .sapUiIcon {
-  color: #0b0b0b !important;
-  margin-top: 3px !important;
+  color: red !important;
 }
-.sapMSegBBtn.sapMSegBBtnSel .sapMSegBBtnInner {
-  background: #0064d9 !important;
-  color: white !important;
+.sapMTitleStyleAuto {
+  font-size: 18px !important;
 }
-.sapMInputBaseContentWrapper {
-  background: white !important;
+.sapUiTableCellInner svg {
+  stroke: #664daa !important;
 }
-.filterInput .sapMInputBaseInner,
-.filterInput input {
-  border-radius: 20px !important;
-  height: 38px !important;
-  line-height: 38px !important;
+.filterHeader {
+  font-weight: 600;
+  position: absolute !important;
+  top: 44px;
+  left: 33px;
 }
-.filterInput .sapMMultiComboBoxBorder {
-  border-radius: 20px !important;
-  height: 40px !important;
-}
-.filterInput .sapMInputBaseContentWrapper {
-  border-radius: 20px !important;
-  height: 40px !important;
-}
-
-/* ===== Table Design ===== */
-
-/* Header row - gray background including checkbox column */
-.sapUiGlobalBackgroundColor,
-.sapMShellGlobalInnerBackground {
-  background-color: white !important;
-}
-.sapUiCompFilterBar {
-  border-bottom: none !important;
+/* ===== Table Card Wrapper ===== */
+.sapUiTable {
+  background: #fff !important;
+  border-radius: 12px !important;
+  border: 1px solid #e2e6ef !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07) !important;
+  margin: 20px 16px !important;
+  overflow: hidden !important;
 }
 
-.sapUiTableCnt {
-  margin-top: 24px !important;
+/* ===== Table Toolbar ===== */
+.sapUiTable .sapMTB,
+.sapUiTable .sapMOTB {
+  background: #fff !important;
+  border-bottom: 1px solid #e8eaf0 !important;
+  border-radius: 12px 12px 0 0 !important;
+  padding: 10px 16px !important;
+  min-height: 56px !important;
 }
+
+/* ===== Bordered Icon Buttons in Toolbar ===== */
+.sapUiTable .sapMTB .sapMBtn .sapMBtnInner,
+.sapUiTable .sapMOTB .sapMBtn .sapMBtnInner {
+  border: 1px solid #d0d7e3 !important;
+  border-radius: 8px !important;
+  background: #fff !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #333 !important;
+}
+
+.sapUiTable .sapMTB .sapMBtn .sapMBtnInner .sapUiIcon,
+.sapUiTable .sapMOTB .sapMBtn .sapMBtnInner .sapUiIcon {
+  color: #664daa !important;
+  margin-top: 0 !important;
+}
+
+.sapUiTable .sapMTB .sapMBtn:hover .sapMBtnInner,
+.sapUiTable .sapMOTB .sapMBtn:hover .sapMBtnInner {
+  border-color: #664daa !important;
+  background: #f0f6ff !important;
+  color: #0064d9 !important;
+}
+
+/* Keep SegmentedButton inside toolbar unaffected */
+.sapUiTable .sapMTB .sapMSegB .sapMBtn .sapMBtnInner,
+.sapUiTable .sapMOTB .sapMSegB .sapMBtn .sapMBtnInner {
+  border: none !important;
+  border-radius: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  background: transparent !important;
+}
+
+/* ===== Row Count Badge ===== */
+.sapUiSmallMarginBegin.sapMText {
+  color: #664daa !important;
+  border-radius: 12px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  min-width: 24px !important;
+  text-align: center !important;
+  display: inline-block !important;
+}
+.sapUiSmallMarginBegin {
+  margin-left: 10px !important;
+}
+/* ===== Table Column Header ===== */
 .sapUiTableColHdrTr,
 .sapUiTableColHdrTr td,
 .sapUiTableColRowHdr,
 .sapUiTableColRowHdrIco {
-  background-color: #f5f5f5 !important;
+  background-color: #f5f7fa !important;
 }
+
 .sapUiTableColHdrCnt {
-  border-bottom: 1px solid transparent !important;
+  border-bottom: 1px solid #e2e6ef !important;
 }
+
 .sapUiSizeCozy .sapUiTableColHdrCnt {
-  border-bottom-color: transparent !important;
-  border-bottom: 1px solid transparent !important;
+  border-bottom: 1px solid #e2e6ef !important;
 }
-.sapUiTableCCnt {
-  border-bottom: none !important;
-}
-.sapMInputBaseIconContainer {
-  margin-top: 5px !important;
-}
+
 .sapUiTableColHdrTr .sapUiTableCell {
-  background-color: #f5f5f5 !important;
-  color: #555555 !important;
+  background-color: #f5f7fa !important;
+  color: #555 !important;
   font-weight: 600 !important;
   font-size: 13px !important;
-  border-bottom: 0px solid #e0e0e0 !important;
+  border-bottom: 0 !important;
 }
 
-/* Checkbox column header cell - gray */
 .sapUiTableRowSelectionHeaderCell {
-  background-color: #f5f5f5 !important;
-  border-bottom: 0px solid #e0e0e0 !important;
+  background-color: #f5f7fa !important;
+  border-bottom: 0 !important;
 }
 
-/* Row - only bottom border */
+/* ===== Table Rows ===== */
 .sapUiTableTr > td {
-  border-bottom: 1px solid #e5e5e5 !important;
+  border-bottom: 1px solid #ebebeb !important;
   border-top: none !important;
   border-left: none !important;
   border-right: none !important;
   padding-block: 10px !important;
 }
+
+.sapUiTableCCnt {
+  border-bottom: none !important;
+}
+
 .sapUiTableSelectAllCheckBox::after {
   top: 7px !important;
 }
 
-/* Remove outer table border */
-.sapUiTable {
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* Row hover highlight - full row including checkbox cell */
+/* Row hover */
 .sapUiTableTr:hover > td,
 .sapUiTableTr:hover .sapUiTableRowSelectionCell,
-.sapUiTableTr:hover .sapUiTableCellFirst,
 .sapUiTableRow:hover .sapUiTableCell,
 .sapUiTableRow:hover .sapUiTableRowSelectionCell {
-  background-color: #f9f9f9 !important;
+  background-color: #f5f8ff !important;
   cursor: pointer;
 }
 
-/* Selected row highlight */
+/* Selected row */
 .sapUiTableRowSel > td {
   background-color: #eaf2ff !important;
 }
 
+.sapUiTableRowSel > .sapUiTableCell {
+  border-bottom-color: transparent !important;
+}
+
 /* Cell padding */
 .sapUiTableCell {
-  padding: 12px 12px !important;
+  padding: 12px 16px !important;
   border-right: transparent !important;
 }
 
-/* Smaller checkbox */
+/* Checkbox */
 .sapUiTableRowSelectionCell .sapMCb,
 .sapUiTableRowSelectionHeaderCell .sapMCb {
   zoom: 0.78 !important;
 }
 
-/* Checkbox column bottom border matches rows */
 .sapUiTableRowSelectionCell {
-  border-bottom: 1px solid #e8e8e8 !important;
+  border-bottom: 1px solid #ebebeb !important;
   border-right: none !important;
   background-color: transparent !important;
 }
 
-/* Remove row focus outline */
+/* Focus outlines */
 .sapUiTableTr:focus > td {
   outline: none !important;
 }
 
-.title {
-  font-size: 20px !important;
-  font-weight: bold;
-}
-.sapUiSizeCompact .sapMTB {
-  height: auto !important;
-}
-.sapUiSizeCompact .sapMBtn {
-  height: auto !important;
-}
-.sapUiSizeCompact .sapMSegBBtn .sapMSegBBtnInner {
-  height: auto !important;
-}
-.sapMTB {
-  overflow: visible !important;
-}
-.sapUiCompFilterBar.sapUiRespGrid.sapUiRespGridVSpace1 > div {
-  margin-bottom: auto !important;
-}
-.sapMBtn:hover > .sapMBtnHoverable {
-  background-color: transparent !important;
-  border: 1px solid #0064d9 !important;
-  height: 40px !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.sapMBtn:hover
-  > .sapMBtnHoverable.sapMBtnEmphasized:not(.sapMBtnActive):not(
-    .sapMToggleBtnPressed
-  ) {
-  color: #0064d9 !important;
-}
-span.sapMBtnInner.sapMBtnEmphasized {
-  background-color: #0064d9 !important;
-  font-size: 14px !important;
-  width: 100px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 90px !important;
-}
-.sapUiTableRowSel > .sapUiTableCell {
-  border-bottom-color: transparent !important;
-}
 .sapUiTableCell:focus::before {
   outline: 0px solid transparent !important;
 }
+
+/* ===== Title ===== */
+.title {
+  font-size: 20px !important;
+  font-weight: bold !important;
+}
+
+/* ===== Toolbar height fixes ===== */
+.sapUiSizeCompact .sapMTB {
+  height: auto !important;
+}
+
+.sapUiSizeCompact .sapMBtn {
+  height: auto !important;
+}
+
+.sapMTB {
+  overflow: visible !important;
+}
+
+.sapUiCompFilterBar.sapUiRespGrid.sapUiRespGridVSpace1 > div {
+  margin-bottom: auto !important;
+}
+
+/* ===== Focus ring cleanup ===== */
 html.sap-desktop
   .sapMBtn:focus
   > .sapMBtnEmphasized.sapMFocusable:not(.sapMBtnActive):not(
@@ -232,13 +429,23 @@ html.sap-desktop
   ):before {
   border: 1px solid transparent !important;
 }
+
 button :focus {
   outline: none !important;
 }
 
-@media (max-width: 600px) {
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .sapUiTable {
+    margin: 12px 8px !important;
+  }
+  .sapUiCompFilterBar {
+    margin: 12px 8px 0 8px !important;
+  }
   .title {
     font-size: 16px !important;
-    font-weight: bold;
+  }
+  .sapUiTableCell {
+    padding: 8px 8px !important;
   }
 }
