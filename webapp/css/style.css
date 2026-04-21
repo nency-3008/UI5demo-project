@@ -44,6 +44,11 @@ html.sap-desktop
   > .sapMFocusable:not(.sapMBadgeIndicator):before {
   border: 1px solid transparent !important;
 }
+html.sap-desktop
+  .sapMSegBBtn:first-child.sapMSegBBtnFocusable:focus
+  .sapMSegBBtnInner:after {
+  border: 1px solid transparent !important;
+}
 .sapUiTableHeaderDataCell .sapMLabel,
 .sapMListTbl .sapMColumnHeader .sapMLabel {
   font-weight: 600 !important;
@@ -231,15 +236,7 @@ span.sapMBtnInner.sapMBtnEmphasized {
 .sapMDLIValue {
   color: #664daa !important;
 }
-.sapMIBar .sapMBtn .sapMBtnInner.sapMBtnDefault,
-.sapMIBar .sapMBtn .sapMBtnInner.sapMBtnDefault .sapUiIcon,
-.sapUxAPObjectPageHeaderIdentifierActions .sapMBtn .sapMBtnInner.sapMBtnDefault,
-.sapUxAPObjectPageHeaderIdentifierActions
-  .sapMBtn
-  .sapMBtnInner.sapMBtnDefault
-  .sapUiIcon {
-  color: red !important;
-}
+
 .sapMTitleStyleAuto {
   font-size: 18px !important;
 }
