@@ -1,5 +1,31 @@
 /* Enter your custom styles here */
 
+/* ===== Adani Custom Font ===== */
+@font-face {
+  font-family: "AdaniFont";
+  src: url("./fonts/adani_font_file 1.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AdaniFont";
+  src: url("./fonts/adani_font_file 2.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body,
+body *:not(.sapUiIcon):not(.sapMBtnIcon):not([class*="sapUiIcon"]) {
+  font-family: "AdaniFont", Arial, sans-serif !important;
+}
+
+.sapUiIcon,
+.sapMBtnIcon,
+[class*="sapUiIcon"] {
+  font-family: "SAP-icons" !important;
+}
+
 /* ===== Page Background ===== */
 .sapUiGlobalBackgroundColor,
 .sapMShellGlobalInnerBackground,
